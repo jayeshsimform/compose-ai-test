@@ -2,69 +2,113 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+### Demo
+
+```
+https://compose-ai-test.vercel.app/
+```
+
+## Clone Project
+
+```
+git clone https://github.com/jayeshsimform/compose-ai-test.git
+```
+
+## Install node modules
+
+```
+npm install
+```
+
 ## Available Scripts
 
 In the project directory, you can run:
 
 ### `npm start`
 
-Runs the app in the development mode.\
+```Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
 
 ### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+This command will create production builds.
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Here is the list of predefine command
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```js
+const  preDefCommand = ['/add:', '/uppercase:']
 
-### `npm run eject`
+start message with / an it will show available command to choose from. Because of time limitation, manual typing command will not work as expected.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<h2>/add:</h2>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```
+This command will add numbers. it will ignore any string.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+For ex. : /add: 1 2 3 will result into 6
 
-## Learn More
+/add: 1 hello 2 hi 3 demo 4abcs result into 6
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Add Command
 
-### Code Splitting
+![alt text](https://raw.githubusercontent.com/jayeshsimform/compose-ai-test/master/src/images/add-command-code.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Add Command Output
 
-### Analyzing the Bundle Size
+![alt text](https://github.com/jayeshsimform/compose-ai-test/blob/master/src/images/add-command-output.png?raw=true)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Number with String
 
-### Making a Progressive Web App
+![alt text](https://github.com/jayeshsimform/compose-ai-test/blob/master/src/images/add-command-validation-code.png?raw=true)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Number with String Output
 
-### Advanced Configuration
+![alt text](https://github.com/jayeshsimform/compose-ai-test/blob/master/src/images/add-command-validation-code-output.png?raw=true)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+<h2>/uppercase:</h2>
 
-### Deployment
+```
+/uppercase command will convert lower case string into uppercase.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+For ex. : "/uppercase: hello world"
+Output : HELLO WORLD.
 
-### `npm run build` fails to minify
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![alt text](https://github.com/jayeshsimform/compose-ai-test/blob/master/src/images/uppercase-command-code.png?raw=true)
+
+![alt text](https://github.com/jayeshsimform/compose-ai-test/blob/master/src/images/uppercase-command-output.png?raw=true)
+
+### Project requirements:
+
+```
+Start a message with / an it will show the available command to choose from the suggestion.
+```
+
+### Assumptions
+
+```
+After typing slash commands, the existing text in textbox will be affected. Newly typed text after executing slash command will not affected.
+```
+
+### Limitations
+
+```
+User must choose a command from the options; manually entered command will not produce the expected results.
+```
+
+### Milestones
+
+```
+In the future, we can implement backend support to get command list, And using that we can implement many functionality Like Join group, Start meeting, Open app.
+```
